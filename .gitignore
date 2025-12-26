@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# Local settings
+appsettings.Development.json
+
+# OS
+Thumbs.db
+SensorSimulatorGui.slnx
