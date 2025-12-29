@@ -36,199 +36,285 @@ namespace SensorSimulatorGui.Pages
 
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            mainLayout = new System.Windows.Forms.TableLayoutPanel();
-            panelFilterHost = new System.Windows.Forms.Panel();
-            panelGridHost = new System.Windows.Forms.Panel();
-            filterLayout = new System.Windows.Forms.TableLayoutPanel();
-
-            lblSensorCaption = new System.Windows.Forms.Label();
-            txtSensorId = new System.Windows.Forms.TextBox();
-
-            lblFromCaption = new System.Windows.Forms.Label();
-            dtFrom = new System.Windows.Forms.DateTimePicker();
-
-            lblToCaption = new System.Windows.Forms.Label();
-            dtTo = new System.Windows.Forms.DateTimePicker();
-
-            lblPageCaption = new System.Windows.Forms.Label();
-            numPage = new System.Windows.Forms.NumericUpDown();
-
-            btnLoad = new System.Windows.Forms.Button();
-
-            lblStatus = new System.Windows.Forms.Label();
-            dgvArchived = new System.Windows.Forms.DataGridView();
-
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            mainLayout = new TableLayoutPanel();
+            panelFilterHost = new Panel();
+            filterLayout = new TableLayoutPanel();
+            lblSensorCaption = new Label();
+            txtSensorId = new TextBox();
+            lblFromCaption = new Label();
+            dtFrom = new DateTimePicker();
+            lblToCaption = new Label();
+            dtTo = new DateTimePicker();
+            lblPageCaption = new Label();
+            numPage = new NumericUpDown();
+            btnLoad = new Button();
+            lblStatus = new Label();
+            panelGridHost = new Panel();
+            dgvArchived = new DataGridView();
             mainLayout.SuspendLayout();
+            panelFilterHost.SuspendLayout();
             filterLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numPage).BeginInit();
+            panelGridHost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvArchived).BeginInit();
             SuspendLayout();
-
-            // ArchivedPage
-            BackColor = System.Drawing.Color.FromArgb(30, 41, 59);
-
+            // 
             // mainLayout
-            mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            mainLayout.Padding = new System.Windows.Forms.Padding(12);
+            // 
             mainLayout.ColumnCount = 1;
-            mainLayout.RowCount = 3;
-            mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
-            mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
-            mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            mainLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             mainLayout.Controls.Add(panelFilterHost, 0, 0);
             mainLayout.Controls.Add(lblStatus, 0, 1);
             mainLayout.Controls.Add(panelGridHost, 0, 2);
-
+            mainLayout.Dock = DockStyle.Fill;
+            mainLayout.Location = new Point(0, 0);
+            mainLayout.Name = "mainLayout";
+            mainLayout.Padding = new Padding(12);
+            mainLayout.RowCount = 3;
+            mainLayout.RowStyles.Add(new RowStyle());
+            mainLayout.RowStyles.Add(new RowStyle());
+            mainLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            mainLayout.Size = new Size(1000, 600);
+            mainLayout.TabIndex = 0;
+            // 
             // panelFilterHost
-            panelFilterHost.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelFilterHost.BackColor = System.Drawing.Color.FromArgb(37, 51, 71);
-            panelFilterHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            // 
+            panelFilterHost.BackColor = Color.FromArgb(37, 51, 71);
+            panelFilterHost.BorderStyle = BorderStyle.FixedSingle;
             panelFilterHost.Controls.Add(filterLayout);
-
+            panelFilterHost.Dock = DockStyle.Fill;
+            panelFilterHost.Location = new Point(15, 15);
+            panelFilterHost.Name = "panelFilterHost";
+            panelFilterHost.Size = new Size(970, 100);
+            panelFilterHost.TabIndex = 0;
+            // 
             // filterLayout
-            filterLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            filterLayout.BackColor = System.Drawing.Color.FromArgb(37, 51, 71);
-            filterLayout.Padding = new System.Windows.Forms.Padding(14, 12, 14, 10);
+            // 
+            filterLayout.BackColor = Color.FromArgb(37, 51, 71);
             filterLayout.ColumnCount = 9;
-            filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
-            filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
-            filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
-            filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
-            filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
-
-            // SensorId
-            lblSensorCaption.AutoSize = true;
-            lblSensorCaption.Text = "SensorId";
-            lblSensorCaption.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-            lblSensorCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            txtSensorId.Dock = System.Windows.Forms.DockStyle.Fill;
-            txtSensorId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            txtSensorId.BackColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            txtSensorId.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-
-            // From
-            lblFromCaption.AutoSize = true;
-            lblFromCaption.Text = "From";
-            lblFromCaption.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-            lblFromCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            dtFrom.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            dtFrom.ShowCheckBox = true;
-            dtFrom.Dock = System.Windows.Forms.DockStyle.Fill;
-            dtFrom.BackColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            dtFrom.CalendarMonthBackground = System.Drawing.Color.FromArgb(51, 65, 85);
-            dtFrom.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-
-            // To
-            lblToCaption.AutoSize = true;
-            lblToCaption.Text = "To";
-            lblToCaption.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-            lblToCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            dtTo.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            dtTo.ShowCheckBox = true;
-            dtTo.Dock = System.Windows.Forms.DockStyle.Fill;
-            dtTo.BackColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            dtTo.CalendarMonthBackground = System.Drawing.Color.FromArgb(51, 65, 85);
-            dtTo.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-
-            // Page
-            lblPageCaption.AutoSize = true;
-            lblPageCaption.Text = "Page";
-            lblPageCaption.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-            lblPageCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            numPage.Minimum = 1;
-            numPage.Maximum = 100000;
-            numPage.Value = 1;
-            numPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            numPage.BackColor = System.Drawing.Color.FromArgb(51, 65, 85);
-            numPage.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-
-            // Load button
-            btnLoad.Text = "Load";
-            btnLoad.BackColor = System.Drawing.Color.FromArgb(59, 130, 246);
-            btnLoad.ForeColor = System.Drawing.Color.White;
-            btnLoad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(37, 99, 235);
-            btnLoad.UseVisualStyleBackColor = false;
-            btnLoad.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
-            btnLoad.AutoSize = true;
-            btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnLoad.FlatAppearance.BorderSize = 0;
-
-            // status
-            lblStatus.AutoSize = true;
-            lblStatus.Text = "Ready.";
-            lblStatus.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-            lblStatus.Padding = new System.Windows.Forms.Padding(10, 0, 10, 6);
-
-            // add filter controls
+            filterLayout.ColumnStyles.Add(new ColumnStyle());
+            filterLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            filterLayout.ColumnStyles.Add(new ColumnStyle());
+            filterLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            filterLayout.ColumnStyles.Add(new ColumnStyle());
+            filterLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            filterLayout.ColumnStyles.Add(new ColumnStyle());
+            filterLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            filterLayout.ColumnStyles.Add(new ColumnStyle());
             filterLayout.Controls.Add(lblSensorCaption, 0, 0);
             filterLayout.Controls.Add(txtSensorId, 1, 0);
-
             filterLayout.Controls.Add(lblFromCaption, 2, 0);
             filterLayout.Controls.Add(dtFrom, 3, 0);
-
             filterLayout.Controls.Add(lblToCaption, 4, 0);
             filterLayout.Controls.Add(dtTo, 5, 0);
-
             filterLayout.Controls.Add(lblPageCaption, 6, 0);
             filterLayout.Controls.Add(numPage, 7, 0);
-
             filterLayout.Controls.Add(btnLoad, 8, 0);
-
+            filterLayout.Dock = DockStyle.Fill;
+            filterLayout.Location = new Point(0, 0);
+            filterLayout.Name = "filterLayout";
+            filterLayout.Padding = new Padding(14, 12, 14, 10);
+            filterLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            filterLayout.Size = new Size(968, 98);
+            filterLayout.TabIndex = 0;
+            // 
+            // lblSensorCaption
+            // 
+            lblSensorCaption.Anchor = AnchorStyles.Left;
+            lblSensorCaption.AutoSize = true;
+            lblSensorCaption.ForeColor = Color.FromArgb(226, 232, 240);
+            lblSensorCaption.Location = new Point(17, 40);
+            lblSensorCaption.Name = "lblSensorCaption";
+            lblSensorCaption.Size = new Size(66, 20);
+            lblSensorCaption.TabIndex = 0;
+            lblSensorCaption.Text = "SensorId";
+            // 
+            // txtSensorId
+            // 
+            txtSensorId.BackColor = Color.FromArgb(51, 65, 85);
+            txtSensorId.BorderStyle = BorderStyle.FixedSingle;
+            txtSensorId.Dock = DockStyle.Fill;
+            txtSensorId.ForeColor = Color.FromArgb(226, 232, 240);
+            txtSensorId.Location = new Point(89, 15);
+            txtSensorId.Name = "txtSensorId";
+            txtSensorId.Size = new Size(265, 27);
+            txtSensorId.TabIndex = 1;
+            // 
+            // lblFromCaption
+            // 
+            lblFromCaption.Anchor = AnchorStyles.Left;
+            lblFromCaption.AutoSize = true;
+            lblFromCaption.ForeColor = Color.FromArgb(226, 232, 240);
+            lblFromCaption.Location = new Point(360, 40);
+            lblFromCaption.Name = "lblFromCaption";
+            lblFromCaption.Size = new Size(43, 20);
+            lblFromCaption.TabIndex = 2;
+            lblFromCaption.Text = "From";
+            // 
+            // dtFrom
+            // 
+            dtFrom.BackColor = Color.FromArgb(51, 65, 85);
+            dtFrom.CalendarMonthBackground = Color.FromArgb(51, 65, 85);
+            dtFrom.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            dtFrom.Dock = DockStyle.Fill;
+            dtFrom.ForeColor = Color.FromArgb(226, 232, 240);
+            dtFrom.Format = DateTimePickerFormat.Custom;
+            dtFrom.Location = new Point(409, 15);
+            dtFrom.Name = "dtFrom";
+            dtFrom.ShowCheckBox = true;
+            dtFrom.Size = new Size(149, 27);
+            dtFrom.TabIndex = 3;
+            // 
+            // lblToCaption
+            // 
+            lblToCaption.Anchor = AnchorStyles.Left;
+            lblToCaption.AutoSize = true;
+            lblToCaption.ForeColor = Color.FromArgb(226, 232, 240);
+            lblToCaption.Location = new Point(564, 40);
+            lblToCaption.Name = "lblToCaption";
+            lblToCaption.Size = new Size(25, 20);
+            lblToCaption.TabIndex = 4;
+            lblToCaption.Text = "To";
+            // 
+            // dtTo
+            // 
+            dtTo.BackColor = Color.FromArgb(51, 65, 85);
+            dtTo.CalendarMonthBackground = Color.FromArgb(51, 65, 85);
+            dtTo.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            dtTo.Dock = DockStyle.Fill;
+            dtTo.ForeColor = Color.FromArgb(226, 232, 240);
+            dtTo.Format = DateTimePickerFormat.Custom;
+            dtTo.Location = new Point(595, 15);
+            dtTo.Name = "dtTo";
+            dtTo.ShowCheckBox = true;
+            dtTo.Size = new Size(149, 27);
+            dtTo.TabIndex = 5;
+            // 
+            // lblPageCaption
+            // 
+            lblPageCaption.Anchor = AnchorStyles.Left;
+            lblPageCaption.AutoSize = true;
+            lblPageCaption.ForeColor = Color.FromArgb(226, 232, 240);
+            lblPageCaption.Location = new Point(750, 40);
+            lblPageCaption.Name = "lblPageCaption";
+            lblPageCaption.Size = new Size(41, 20);
+            lblPageCaption.TabIndex = 6;
+            lblPageCaption.Text = "Page";
+            // 
+            // numPage
+            // 
+            numPage.BackColor = Color.FromArgb(51, 65, 85);
+            numPage.Dock = DockStyle.Fill;
+            numPage.ForeColor = Color.FromArgb(226, 232, 240);
+            numPage.Location = new Point(797, 15);
+            numPage.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            numPage.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numPage.Name = "numPage";
+            numPage.Size = new Size(71, 27);
+            numPage.TabIndex = 7;
+            numPage.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // btnLoad
+            // 
+            btnLoad.AutoSize = true;
+            btnLoad.BackColor = Color.FromArgb(59, 130, 246);
+            btnLoad.FlatAppearance.BorderSize = 0;
+            btnLoad.FlatAppearance.MouseOverBackColor = Color.FromArgb(37, 99, 235);
+            btnLoad.FlatStyle = FlatStyle.Flat;
+            btnLoad.ForeColor = Color.White;
+            btnLoad.Location = new Point(874, 15);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Padding = new Padding(10, 4, 10, 4);
+            btnLoad.Size = new Size(75, 38);
+            btnLoad.TabIndex = 8;
+            btnLoad.Text = "Load";
+            btnLoad.UseVisualStyleBackColor = false;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.ForeColor = Color.FromArgb(226, 232, 240);
+            lblStatus.Location = new Point(15, 118);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Padding = new Padding(10, 0, 10, 6);
+            lblStatus.Size = new Size(73, 26);
+            lblStatus.TabIndex = 1;
+            lblStatus.Text = "Ready.";
+            // 
             // panelGridHost
-            panelGridHost.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelGridHost.BackColor = System.Drawing.Color.FromArgb(37, 51, 71);
-            panelGridHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panelGridHost.Padding = new System.Windows.Forms.Padding(6);
+            // 
+            panelGridHost.BackColor = Color.FromArgb(37, 51, 71);
+            panelGridHost.BorderStyle = BorderStyle.FixedSingle;
             panelGridHost.Controls.Add(dgvArchived);
-
+            panelGridHost.Dock = DockStyle.Fill;
+            panelGridHost.Location = new Point(15, 147);
+            panelGridHost.Name = "panelGridHost";
+            panelGridHost.Padding = new Padding(6);
+            panelGridHost.Size = new Size(970, 438);
+            panelGridHost.TabIndex = 2;
+            // 
             // dgvArchived
-            dgvArchived.Dock = System.Windows.Forms.DockStyle.Fill;
+            // 
             dgvArchived.AllowUserToAddRows = false;
             dgvArchived.AllowUserToDeleteRows = false;
-            dgvArchived.ReadOnly = true;
-            dgvArchived.MultiSelect = false;
-            dgvArchived.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            dgvArchived.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dgvArchived.BackgroundColor = System.Drawing.Color.FromArgb(37, 51, 71);
-            dgvArchived.GridColor = System.Drawing.Color.FromArgb(71, 85, 105);
-            dgvArchived.RowHeadersVisible = false;
-            dgvArchived.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dgvArchived.EnableHeadersVisualStyles = false;
-            dgvArchived.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(44, 59, 79);
+            dgvArchived.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvArchived.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvArchived.BackgroundColor = Color.FromArgb(37, 51, 71);
+            dgvArchived.BorderStyle = BorderStyle.None;
+            dgvArchived.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvArchived.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(30, 58, 138);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(30, 58, 138);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvArchived.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvArchived.ColumnHeadersHeight = 34;
-            dgvArchived.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvArchived.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(30, 58, 138); // dark blue
-            dgvArchived.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
-            dgvArchived.ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(30, 58, 138);
-            dgvArchived.ColumnHeadersDefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            dgvArchived.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(37, 51, 71);
-            dgvArchived.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-            dgvArchived.RowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(37, 51, 71);
-            dgvArchived.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(196, 181, 253);
-            dgvArchived.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(248, 250, 252);
-            dgvArchived.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(44, 59, 79);
-            dgvArchived.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvArchived.RowTemplate.Height = 30;
+            dgvArchived.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(37, 51, 71);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(226, 232, 240);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(196, 181, 253);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(248, 250, 252);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvArchived.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvArchived.Dock = DockStyle.Fill;
+            dgvArchived.EnableHeadersVisualStyles = false;
+            dgvArchived.GridColor = Color.FromArgb(71, 85, 105);
+            dgvArchived.Location = new Point(6, 6);
+            dgvArchived.MultiSelect = false;
             dgvArchived.Name = "dgvArchived";
+            dgvArchived.ReadOnly = true;
+            dgvArchived.RowHeadersVisible = false;
+            dgvArchived.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(37, 51, 71);
+            dgvArchived.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvArchived.RowTemplate.Height = 30;
+            dgvArchived.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvArchived.Size = new Size(956, 424);
             dgvArchived.TabIndex = 0;
-
+            // 
             // ArchivedPage
+            // 
+            BackColor = Color.FromArgb(30, 41, 59);
             Controls.Add(mainLayout);
             Name = "ArchivedPage";
-            Size = new System.Drawing.Size(1000, 600);
-
+            Size = new Size(1000, 600);
             mainLayout.ResumeLayout(false);
             mainLayout.PerformLayout();
+            panelFilterHost.ResumeLayout(false);
             filterLayout.ResumeLayout(false);
             filterLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numPage).EndInit();
+            panelGridHost.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvArchived).EndInit();
             ResumeLayout(false);
         }
