@@ -16,14 +16,14 @@ public partial class Form1 : Form
 
     private readonly ReactorMonitorSettings _settings;
 
-    // Nav highlight (kept in code so the designer stays clean).
+    // Nav highlight.
     private readonly Color _navIdle = Color.FromArgb(17, 24, 39);
     private readonly Color _navHover = Color.FromArgb(30, 41, 59);
     private readonly Color _navActive = Color.FromArgb(91, 33, 182); // purple accent
     private readonly Color _navText = Color.FromArgb(226, 232, 240);
     private readonly Color _navTextActive = Color.White;
 
-    // Prevent re-entrancy: FormClosing can fire multiple times (e.g., we call Close() again after async shutdown).
+    // Avoid double-close during async shutdown.
     private bool _isClosing;
 
     public Form1(ReactorMonitorSettings settings)
@@ -87,7 +87,7 @@ public partial class Form1 : Form
 
     protected override void OnFormClosing(FormClosingEventArgs e)
     {
-        // Don't block the UI thread here (waiting on async tasks can deadlock WinForms).
+        // Don't block the UI thread on shutdown.
         if (_isClosing)
         {
             base.OnFormClosing(e);
@@ -104,7 +104,7 @@ public partial class Form1 : Form
             try { await _livePage.DisconnectAsync(); } catch { }
             try { _http.Dispose(); } catch { }
 
-            // Trigger the actual close now that async shutdown is done.
+            // Finish closing.
             Close();
         });
     }

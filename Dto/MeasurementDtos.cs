@@ -11,6 +11,6 @@ public sealed class PagedResponse<T>
     public int PageSize { get; set; }
     public int Total { get; set; }
 
-    // API wraps the list in an { items: [...] } envelope.
+    // API returns { items: [...] }.
     public List<T> Items { get; set; } = new();
 }

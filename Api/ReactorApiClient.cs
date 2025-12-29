@@ -5,9 +5,7 @@ using SensorSimulatorGui.Dto;
 
 namespace SensorSimulatorGui.Api;
 
-/// <summary>
-/// Small REST client used by the WinForms UI.
-/// </summary>
+/// REST client used by the WinForms UI.
 public sealed class ReactorApiClient
 {
     private readonly HttpClient _http;
@@ -29,7 +27,6 @@ public sealed class ReactorApiClient
         _http = http;
         _http.Timeout = TimeSpan.FromSeconds(10);
     }
-    // SensorManager
     public async Task<List<SensorDefinitionOut>> GetSensorsAsync(bool? enabled = null, bool? simulate = null, string? sensorType = null, int page = 1, int pageSize = 200, CancellationToken ct = default)
     {
         var url = $"{SensorManagerBaseUrl.TrimEnd('/')}/sensors?page={page}&pageSize={pageSize}";
@@ -79,7 +76,6 @@ public sealed class ReactorApiClient
             return;
         res.EnsureSuccessStatusCode();
     }
-    // Archiver
     public async Task<PagedResponse<MeasurementOut>> GetMeasurementsAsync(string? sensorId = null, DateTimeOffset? from = null, DateTimeOffset? to = null, int page = 1, int pageSize = 200, CancellationToken ct = default)
     {
         var url = $"{ArchiverBaseUrl.TrimEnd('/')}/measurements?page={page}&pageSize={pageSize}";
@@ -93,14 +89,11 @@ public sealed class ReactorApiClient
         var payload = await res.Content.ReadFromJsonAsync<PagedResponse<MeasurementOut>>(JsonOptions, ct);
         return payload ?? new PagedResponse<MeasurementOut>();
     }
-    // Controller (subscriptions)
     public async Task EnsureSubscriptionAsync(string clientId, string filter = "all", CancellationToken ct = default)
     {
-        // Controller takes clientId from the route and filter from the query string.
         var url = $"{ControllerBaseUrl.TrimEnd('/')}/subscriptions/{Uri.EscapeDataString(clientId)}?filter={Uri.EscapeDataString(filter)}";
         using var res = await _http.PostAsync(url, content: null, ct);
 
-        // If it's already there, just update it.
         if (res.StatusCode == HttpStatusCode.Conflict || res.StatusCode == HttpStatusCode.BadRequest)
         {
             var putUrl = $"{ControllerBaseUrl.TrimEnd('/')}/subscriptions/{Uri.EscapeDataString(clientId)}?filter={Uri.EscapeDataString(filter)}";

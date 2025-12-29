@@ -32,6 +32,6 @@ public sealed class SensorsListResponse
     public int PageSize { get; set; }
     public int Total { get; set; }
 
-    // API wraps the list in an { items: [...] } envelope.
+    // API returns { items: [...] }.
     public List<SensorDefinitionOut> Items { get; set; } = new();
 }
