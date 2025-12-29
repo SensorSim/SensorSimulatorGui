@@ -41,7 +41,7 @@ namespace SensorSimulatorGui.Controls
             // panelCard
             panelCard.Dock = System.Windows.Forms.DockStyle.Fill;
             panelCard.Padding = new System.Windows.Forms.Padding(12);
-            panelCard.BackColor = System.Drawing.Color.FromArgb(30, 41, 59); // slate card
+            panelCard.BackColor = System.Drawing.Color.FromArgb(37, 51, 71); // slate card
             panelCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             // layout

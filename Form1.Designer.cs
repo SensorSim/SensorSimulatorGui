@@ -41,7 +41,7 @@ namespace SensorSimulatorGui
             SuspendLayout();
 
             // Form look
-            BackColor = System.Drawing.Color.FromArgb(232, 236, 245);
+            BackColor = System.Drawing.Color.FromArgb(30, 41, 59);
             Font = new System.Drawing.Font("Segoe UI", 10F);
 
             // panelNav
@@ -99,7 +99,7 @@ namespace SensorSimulatorGui
             // panelContent
             panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             panelContent.Padding = new System.Windows.Forms.Padding(14, 14, 14, 10);
-            panelContent.BackColor = System.Drawing.Color.FromArgb(232, 236, 245);
+            panelContent.BackColor = System.Drawing.Color.FromArgb(30, 41, 59);
 
             // statusStrip
             statusStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
