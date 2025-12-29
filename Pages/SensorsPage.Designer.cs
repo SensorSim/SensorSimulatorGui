@@ -4,6 +4,8 @@ namespace SensorSimulatorGui.Pages
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.SplitContainer splitContainer;
+        private System.Windows.Forms.Panel panelGridHost;
+        private System.Windows.Forms.Panel panelEditorHost;
         private System.Windows.Forms.DataGridView dgvSensors;
         private System.Windows.Forms.TableLayoutPanel editorLayout;
 
@@ -55,6 +57,8 @@ namespace SensorSimulatorGui.Pages
         {
             components = new System.ComponentModel.Container();
             splitContainer = new System.Windows.Forms.SplitContainer();
+            panelGridHost = new System.Windows.Forms.Panel();
+            panelEditorHost = new System.Windows.Forms.Panel();
             dgvSensors = new System.Windows.Forms.DataGridView();
             editorLayout = new System.Windows.Forms.TableLayoutPanel();
 
@@ -119,12 +123,21 @@ namespace SensorSimulatorGui.Pages
             splitContainer.SplitterDistance = 650;
             splitContainer.SplitterWidth = 8;
             splitContainer.BackColor = System.Drawing.Color.FromArgb(230, 232, 236);
-            splitContainer.Panel1.BackColor = System.Drawing.Color.White;
-            splitContainer.Panel2.BackColor = System.Drawing.Color.White;
+            splitContainer.Panel1.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            splitContainer.Panel2.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            splitContainer.Panel1.Padding = new System.Windows.Forms.Padding(12);
+            splitContainer.Panel2.Padding = new System.Windows.Forms.Padding(12);
             splitContainer.TabIndex = 0;
 
             // Panel1
-            splitContainer.Panel1.Controls.Add(dgvSensors);
+            splitContainer.Panel1.Controls.Add(panelGridHost);
+
+            // panelGridHost
+            panelGridHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelGridHost.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            panelGridHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelGridHost.Padding = new System.Windows.Forms.Padding(6);
+            panelGridHost.Controls.Add(dgvSensors);
 
             // dgvSensors
             dgvSensors.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -134,7 +147,7 @@ namespace SensorSimulatorGui.Pages
             dgvSensors.ReadOnly = true;
             dgvSensors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             dgvSensors.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dgvSensors.BackgroundColor = System.Drawing.Color.White;
+            dgvSensors.BackgroundColor = System.Drawing.Color.FromArgb(248, 250, 252);
             dgvSensors.GridColor = System.Drawing.Color.FromArgb(230, 230, 230);
             dgvSensors.RowHeadersVisible = false;
             dgvSensors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -155,11 +168,17 @@ namespace SensorSimulatorGui.Pages
             dgvSensors.TabIndex = 0;
 
             // Panel2
-            splitContainer.Panel2.Controls.Add(editorLayout);
+            splitContainer.Panel2.Controls.Add(panelEditorHost);
+
+            // panelEditorHost
+            panelEditorHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelEditorHost.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            panelEditorHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelEditorHost.Controls.Add(editorLayout);
 
             // editorLayout
             editorLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            editorLayout.BackColor = System.Drawing.Color.White;
+            editorLayout.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
             editorLayout.Padding = new System.Windows.Forms.Padding(14);
             editorLayout.ColumnCount = 2;
             editorLayout.RowCount = 11;

@@ -5,6 +5,8 @@ namespace SensorSimulatorGui.Pages
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.TableLayoutPanel mainLayout;
         private System.Windows.Forms.TableLayoutPanel filterLayout;
+        private System.Windows.Forms.Panel panelFilterHost;
+        private System.Windows.Forms.Panel panelGridHost;
 
         private System.Windows.Forms.Label lblSensorCaption;
         private System.Windows.Forms.TextBox txtSensorId;
@@ -36,6 +38,8 @@ namespace SensorSimulatorGui.Pages
         {
             components = new System.ComponentModel.Container();
             mainLayout = new System.Windows.Forms.TableLayoutPanel();
+            panelFilterHost = new System.Windows.Forms.Panel();
+            panelGridHost = new System.Windows.Forms.Panel();
             filterLayout = new System.Windows.Forms.TableLayoutPanel();
 
             lblSensorCaption = new System.Windows.Forms.Label();
@@ -66,18 +70,25 @@ namespace SensorSimulatorGui.Pages
 
             // mainLayout
             mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            mainLayout.Padding = new System.Windows.Forms.Padding(12);
             mainLayout.ColumnCount = 1;
             mainLayout.RowCount = 3;
             mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
             mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.AutoSize));
             mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            mainLayout.Controls.Add(filterLayout, 0, 0);
+            mainLayout.Controls.Add(panelFilterHost, 0, 0);
             mainLayout.Controls.Add(lblStatus, 0, 1);
-            mainLayout.Controls.Add(dgvArchived, 0, 2);
+            mainLayout.Controls.Add(panelGridHost, 0, 2);
+
+            // panelFilterHost
+            panelFilterHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelFilterHost.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            panelFilterHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelFilterHost.Controls.Add(filterLayout);
 
             // filterLayout
             filterLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            filterLayout.BackColor = System.Drawing.Color.White;
+            filterLayout.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
             filterLayout.Padding = new System.Windows.Forms.Padding(14, 12, 14, 10);
             filterLayout.ColumnCount = 9;
             filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
@@ -160,6 +171,13 @@ namespace SensorSimulatorGui.Pages
 
             filterLayout.Controls.Add(btnLoad, 8, 0);
 
+            // panelGridHost
+            panelGridHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelGridHost.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            panelGridHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelGridHost.Padding = new System.Windows.Forms.Padding(6);
+            panelGridHost.Controls.Add(dgvArchived);
+
             // dgvArchived
             dgvArchived.Dock = System.Windows.Forms.DockStyle.Fill;
             dgvArchived.AllowUserToAddRows = false;
@@ -168,7 +186,7 @@ namespace SensorSimulatorGui.Pages
             dgvArchived.MultiSelect = false;
             dgvArchived.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             dgvArchived.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dgvArchived.BackgroundColor = System.Drawing.Color.White;
+            dgvArchived.BackgroundColor = System.Drawing.Color.FromArgb(248, 250, 252);
             dgvArchived.GridColor = System.Drawing.Color.FromArgb(230, 230, 230);
             dgvArchived.RowHeadersVisible = false;
             dgvArchived.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;

@@ -41,7 +41,7 @@ namespace SensorSimulatorGui.Controls
             // panelCard
             panelCard.Dock = System.Windows.Forms.DockStyle.Fill;
             panelCard.Padding = new System.Windows.Forms.Padding(12);
-            panelCard.BackColor = System.Drawing.Color.White;
+            panelCard.BackColor = System.Drawing.Color.FromArgb(30, 41, 59); // slate card
             panelCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             // layout
@@ -58,6 +58,7 @@ namespace SensorSimulatorGui.Controls
             lblSensorId.AutoSize = true;
             lblSensorId.Text = "sensor-id";
             lblSensorId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            lblSensorId.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
             lblSensorId.Dock = System.Windows.Forms.DockStyle.Fill;
             lblSensorId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
@@ -72,6 +73,7 @@ namespace SensorSimulatorGui.Controls
             lblValue.AutoSize = true;
             lblValue.Text = "—";
             lblValue.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            lblValue.ForeColor = System.Drawing.Color.FromArgb(248, 250, 252);
             lblValue.Dock = System.Windows.Forms.DockStyle.Fill;
             lblValue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 
@@ -79,7 +81,7 @@ namespace SensorSimulatorGui.Controls
             lblUnit.AutoSize = true;
             lblUnit.Text = "";
             lblUnit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular);
-            lblUnit.ForeColor = System.Drawing.Color.FromArgb(90, 90, 90);
+            lblUnit.ForeColor = System.Drawing.Color.FromArgb(191, 219, 254);
             lblUnit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             lblUnit.Margin = new System.Windows.Forms.Padding(8, 18, 0, 0);
 
@@ -87,7 +89,7 @@ namespace SensorSimulatorGui.Controls
             lblTimestamp.AutoSize = true;
             lblTimestamp.Text = "";
             lblTimestamp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular);
-            lblTimestamp.ForeColor = System.Drawing.Color.FromArgb(110, 110, 110);
+            lblTimestamp.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
             lblTimestamp.Dock = System.Windows.Forms.DockStyle.Fill;
             lblTimestamp.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
 

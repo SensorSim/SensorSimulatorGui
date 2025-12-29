@@ -70,7 +70,7 @@ namespace SensorSimulatorGui.Pages
 
             // headerLayout
             headerLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            headerLayout.BackColor = System.Drawing.Color.White;
+            headerLayout.BackColor = System.Drawing.Color.FromArgb(17, 24, 39); // dark header
             headerLayout.Padding = new System.Windows.Forms.Padding(14, 12, 14, 10);
             headerLayout.ColumnCount = 7;
             headerLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
@@ -84,18 +84,21 @@ namespace SensorSimulatorGui.Pages
             lblFilterCaption.AutoSize = true;
             lblFilterCaption.Text = "Filter";
             lblFilterCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            lblFilterCaption.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblFilterCaption.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
 
             txtFilterSensorId.Dock = System.Windows.Forms.DockStyle.Fill;
             txtFilterSensorId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             txtFilterSensorId.PlaceholderText = "sensorId contains...";
 
+            txtFilterSensorId.BackColor = System.Drawing.Color.FromArgb(31, 41, 59);
+            txtFilterSensorId.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+
             btnClearFilter.Text = "Clear";
             btnClearFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnClearFilter.FlatAppearance.BorderSize = 0;
-            btnClearFilter.BackColor = System.Drawing.Color.FromArgb(226, 232, 240);
-            btnClearFilter.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            btnClearFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            btnClearFilter.BackColor = System.Drawing.Color.FromArgb(51, 65, 85);
+            btnClearFilter.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            btnClearFilter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(71, 85, 105);
             btnClearFilter.UseVisualStyleBackColor = false;
             btnClearFilter.Padding = new System.Windows.Forms.Padding(10, 4, 10, 4);
             btnClearFilter.AutoSize = true;
@@ -116,12 +119,12 @@ namespace SensorSimulatorGui.Pages
             lblStatusCaption.AutoSize = true;
             lblStatusCaption.Text = "Status:";
             lblStatusCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            lblStatusCaption.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblStatusCaption.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
 
             lblStatus.AutoSize = true;
             lblStatus.Text = "disconnected";
             lblStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            lblStatus.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblStatus.ForeColor = System.Drawing.Color.FromArgb(191, 219, 254);
 
             headerLayout.Controls.Add(lblFilterCaption, 0, 0);
             headerLayout.Controls.Add(txtFilterSensorId, 1, 0);
@@ -134,7 +137,7 @@ namespace SensorSimulatorGui.Pages
             // bodyPanel
             bodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             bodyPanel.Padding = new System.Windows.Forms.Padding(12);
-            bodyPanel.BackColor = System.Drawing.Color.Transparent;
+            bodyPanel.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
 
             // flowCards
             flowCards.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -142,14 +145,14 @@ namespace SensorSimulatorGui.Pages
             flowCards.WrapContents = true;
             flowCards.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
             flowCards.Padding = new System.Windows.Forms.Padding(0);
-            flowCards.BackColor = System.Drawing.Color.Transparent;
+            flowCards.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
 
             // lblEmptyHint
             lblEmptyHint.Dock = System.Windows.Forms.DockStyle.Fill;
             lblEmptyHint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             lblEmptyHint.Text = "Waiting for live measurements...";
             lblEmptyHint.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular);
-            lblEmptyHint.ForeColor = System.Drawing.Color.FromArgb(120, 120, 120);
+            lblEmptyHint.ForeColor = System.Drawing.Color.FromArgb(148, 163, 184);
 
             bodyPanel.Controls.Add(flowCards);
             bodyPanel.Controls.Add(lblEmptyHint);

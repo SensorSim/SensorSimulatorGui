@@ -105,11 +105,11 @@ btnNavArchived.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb
             // panelContent
             panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             panelContent.Padding = new System.Windows.Forms.Padding(14, 14, 14, 10);
+            panelContent.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
 
             // statusStrip
             statusStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
-            statusStrip.BackColor = System.Drawing.Color.White;
-            statusStrip.SizingGrip = false; statusStrip.SizingGrip = false;
+            statusStrip.BackColor = System.Drawing.Color.FromArgb(17, 24, 39); // match nav
             statusStrip.SizingGrip = false;
             statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[]
             {
@@ -117,6 +117,7 @@ btnNavArchived.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb
             });
 
             lblEndpoints.Text = "Endpoints: (loaded from appsettings.json)";
+            lblEndpoints.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
             lblEndpoints.Spring = true;
 
             // Form1
