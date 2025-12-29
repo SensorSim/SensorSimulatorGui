@@ -41,7 +41,7 @@ namespace SensorSimulatorGui
             SuspendLayout();
 
             // Form look
-            BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            BackColor = System.Drawing.Color.FromArgb(232, 236, 245);
             Font = new System.Drawing.Font("Segoe UI", 10F);
 
             // panelNav
@@ -60,8 +60,6 @@ namespace SensorSimulatorGui
             btnNavSensors.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
             btnNavSensors.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
             btnNavSensors.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-btnNavSensors.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
-btnNavSensors.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
             btnNavSensors.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
             btnNavSensors.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             btnNavSensors.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
@@ -76,8 +74,6 @@ btnNavSensors.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(
             btnNavLive.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
             btnNavLive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
             btnNavLive.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-btnNavLive.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
-btnNavLive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
             btnNavLive.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
             btnNavLive.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             btnNavLive.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
@@ -92,8 +88,6 @@ btnNavLive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91,
             btnNavArchived.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
             btnNavArchived.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
             btnNavArchived.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
-btnNavArchived.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
-btnNavArchived.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
             btnNavArchived.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
             btnNavArchived.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             btnNavArchived.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
@@ -105,7 +99,7 @@ btnNavArchived.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb
             // panelContent
             panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             panelContent.Padding = new System.Windows.Forms.Padding(14, 14, 14, 10);
-            panelContent.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            panelContent.BackColor = System.Drawing.Color.FromArgb(232, 236, 245);
 
             // statusStrip
             statusStrip.Dock = System.Windows.Forms.DockStyle.Bottom;

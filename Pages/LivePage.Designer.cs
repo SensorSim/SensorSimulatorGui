@@ -57,7 +57,7 @@ namespace SensorSimulatorGui.Pages
             SuspendLayout();
 
             // LivePage
-            BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            BackColor = System.Drawing.Color.FromArgb(232, 236, 245);
 
             // mainLayout
             mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,7 +137,7 @@ namespace SensorSimulatorGui.Pages
             // bodyPanel
             bodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             bodyPanel.Padding = new System.Windows.Forms.Padding(12);
-            bodyPanel.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            bodyPanel.BackColor = System.Drawing.Color.FromArgb(232, 236, 245);
 
             // flowCards
             flowCards.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -145,7 +145,7 @@ namespace SensorSimulatorGui.Pages
             flowCards.WrapContents = true;
             flowCards.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
             flowCards.Padding = new System.Windows.Forms.Padding(0);
-            flowCards.BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            flowCards.BackColor = System.Drawing.Color.FromArgb(232, 236, 245);
 
             // lblEmptyHint
             lblEmptyHint.Dock = System.Windows.Forms.DockStyle.Fill;

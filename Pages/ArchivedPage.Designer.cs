@@ -66,7 +66,7 @@ namespace SensorSimulatorGui.Pages
             SuspendLayout();
 
             // ArchivedPage
-            BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            BackColor = System.Drawing.Color.FromArgb(232, 236, 245);
 
             // mainLayout
             mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -82,13 +82,13 @@ namespace SensorSimulatorGui.Pages
 
             // panelFilterHost
             panelFilterHost.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelFilterHost.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            panelFilterHost.BackColor = System.Drawing.Color.FromArgb(219, 225, 240);
             panelFilterHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panelFilterHost.Controls.Add(filterLayout);
 
             // filterLayout
             filterLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            filterLayout.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            filterLayout.BackColor = System.Drawing.Color.FromArgb(219, 225, 240);
             filterLayout.Padding = new System.Windows.Forms.Padding(14, 12, 14, 10);
             filterLayout.ColumnCount = 9;
             filterLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
@@ -104,40 +104,50 @@ namespace SensorSimulatorGui.Pages
             // SensorId
             lblSensorCaption.AutoSize = true;
             lblSensorCaption.Text = "SensorId";
-            lblSensorCaption.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblSensorCaption.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             lblSensorCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
             txtSensorId.Dock = System.Windows.Forms.DockStyle.Fill;
             txtSensorId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtSensorId.BackColor = System.Drawing.Color.FromArgb(210, 218, 236);
+            txtSensorId.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
 
             // From
             lblFromCaption.AutoSize = true;
             lblFromCaption.Text = "From";
-            lblFromCaption.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblFromCaption.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             lblFromCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
             dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             dtFrom.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             dtFrom.ShowCheckBox = true;
             dtFrom.Dock = System.Windows.Forms.DockStyle.Fill;
+            dtFrom.BackColor = System.Drawing.Color.FromArgb(210, 218, 236);
+            dtFrom.CalendarMonthBackground = System.Drawing.Color.FromArgb(210, 218, 236);
+            dtFrom.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
 
             // To
             lblToCaption.AutoSize = true;
             lblToCaption.Text = "To";
-            lblToCaption.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblToCaption.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             lblToCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
             dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             dtTo.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             dtTo.ShowCheckBox = true;
             dtTo.Dock = System.Windows.Forms.DockStyle.Fill;
+            dtTo.BackColor = System.Drawing.Color.FromArgb(210, 218, 236);
+            dtTo.CalendarMonthBackground = System.Drawing.Color.FromArgb(210, 218, 236);
+            dtTo.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
 
             // Page
             lblPageCaption.AutoSize = true;
             lblPageCaption.Text = "Page";
-            lblPageCaption.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblPageCaption.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             lblPageCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numPage.Minimum = 1;
             numPage.Maximum = 100000;
             numPage.Value = 1;
             numPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            numPage.BackColor = System.Drawing.Color.FromArgb(210, 218, 236);
+            numPage.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
 
             // Load button
             btnLoad.Text = "Load";
@@ -153,7 +163,7 @@ namespace SensorSimulatorGui.Pages
             // status
             lblStatus.AutoSize = true;
             lblStatus.Text = "Ready.";
-            lblStatus.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
+            lblStatus.ForeColor = System.Drawing.Color.FromArgb(30, 41, 59);
             lblStatus.Padding = new System.Windows.Forms.Padding(10, 0, 10, 6);
 
             // add filter controls
@@ -173,7 +183,7 @@ namespace SensorSimulatorGui.Pages
 
             // panelGridHost
             panelGridHost.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelGridHost.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            panelGridHost.BackColor = System.Drawing.Color.FromArgb(219, 225, 240);
             panelGridHost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             panelGridHost.Padding = new System.Windows.Forms.Padding(6);
             panelGridHost.Controls.Add(dgvArchived);
@@ -186,8 +196,8 @@ namespace SensorSimulatorGui.Pages
             dgvArchived.MultiSelect = false;
             dgvArchived.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             dgvArchived.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dgvArchived.BackgroundColor = System.Drawing.Color.FromArgb(248, 250, 252);
-            dgvArchived.GridColor = System.Drawing.Color.FromArgb(230, 230, 230);
+            dgvArchived.BackgroundColor = System.Drawing.Color.FromArgb(219, 225, 240);
+            dgvArchived.GridColor = System.Drawing.Color.FromArgb(200, 208, 224);
             dgvArchived.RowHeadersVisible = false;
             dgvArchived.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgvArchived.EnableHeadersVisualStyles = false;
@@ -198,9 +208,12 @@ namespace SensorSimulatorGui.Pages
             dgvArchived.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
             dgvArchived.ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(30, 58, 138);
             dgvArchived.ColumnHeadersDefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            dgvArchived.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(219, 234, 254); // light blue
+            dgvArchived.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(219, 225, 240);
+            dgvArchived.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            dgvArchived.RowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(219, 225, 240);
+            dgvArchived.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(196, 181, 253);
             dgvArchived.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            dgvArchived.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            dgvArchived.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(227, 233, 246);
             dgvArchived.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dgvArchived.RowTemplate.Height = 30;
             dgvArchived.Name = "dgvArchived";
