@@ -108,12 +108,19 @@ namespace SensorSimulatorGui.Pages
             actionsLayout.SuspendLayout();
             SuspendLayout();
 
+            // SensorsPage
+            BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+
             // splitContainer
             splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             splitContainer.Location = new System.Drawing.Point(0, 0);
             splitContainer.Name = "splitContainer";
             splitContainer.Orientation = System.Windows.Forms.Orientation.Vertical;
             splitContainer.SplitterDistance = 650;
+            splitContainer.SplitterWidth = 8;
+            splitContainer.BackColor = System.Drawing.Color.FromArgb(230, 232, 236);
+            splitContainer.Panel1.BackColor = System.Drawing.Color.White;
+            splitContainer.Panel2.BackColor = System.Drawing.Color.White;
             splitContainer.TabIndex = 0;
 
             // Panel1
@@ -126,6 +133,24 @@ namespace SensorSimulatorGui.Pages
             dgvSensors.MultiSelect = false;
             dgvSensors.ReadOnly = true;
             dgvSensors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvSensors.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dgvSensors.BackgroundColor = System.Drawing.Color.White;
+            dgvSensors.GridColor = System.Drawing.Color.FromArgb(230, 230, 230);
+            dgvSensors.RowHeadersVisible = false;
+            dgvSensors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSensors.EnableHeadersVisualStyles = false;
+            dgvSensors.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dgvSensors.ColumnHeadersHeight = 34;
+            dgvSensors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvSensors.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(30, 58, 138); // dark blue
+            dgvSensors.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            dgvSensors.ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(30, 58, 138);
+            dgvSensors.ColumnHeadersDefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            dgvSensors.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(219, 234, 254); // light blue
+            dgvSensors.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            dgvSensors.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
+            dgvSensors.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvSensors.RowTemplate.Height = 30;
             dgvSensors.Name = "dgvSensors";
             dgvSensors.TabIndex = 0;
 
@@ -134,7 +159,8 @@ namespace SensorSimulatorGui.Pages
 
             // editorLayout
             editorLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            editorLayout.Padding = new System.Windows.Forms.Padding(10);
+            editorLayout.BackColor = System.Drawing.Color.White;
+            editorLayout.Padding = new System.Windows.Forms.Padding(14);
             editorLayout.ColumnCount = 2;
             editorLayout.RowCount = 11;
             editorLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.AutoSize));
@@ -154,24 +180,31 @@ namespace SensorSimulatorGui.Pages
             // SensorId
             lblSensorId.AutoSize = true;
             lblSensorId.Text = "SensorId";
+            lblSensorId.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblSensorId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             txtSensorId.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtSensorId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             // SensorType
             lblSensorType.AutoSize = true;
             lblSensorType.Text = "SensorType";
+            lblSensorType.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblSensorType.Anchor = System.Windows.Forms.AnchorStyles.Left;
             txtSensorType.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtSensorType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             // Unit
             lblUnit.AutoSize = true;
             lblUnit.Text = "Unit";
+            lblUnit.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblUnit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             txtUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            txtUnit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
             // OperatingMin
             lblOpMin.AutoSize = true;
             lblOpMin.Text = "OperatingMin";
+            lblOpMin.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblOpMin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numOperatingMin.DecimalPlaces = 3;
             numOperatingMin.Minimum = 0;
@@ -183,6 +216,7 @@ namespace SensorSimulatorGui.Pages
             // OperatingMax
             lblOpMax.AutoSize = true;
             lblOpMax.Text = "OperatingMax";
+            lblOpMax.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblOpMax.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numOperatingMax.DecimalPlaces = 3;
             numOperatingMax.Minimum = 0;
@@ -194,6 +228,7 @@ namespace SensorSimulatorGui.Pages
             // WarningMin
             lblWarnMin.AutoSize = true;
             lblWarnMin.Text = "WarningMin";
+            lblWarnMin.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblWarnMin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numWarningMin.DecimalPlaces = 3;
             numWarningMin.Minimum = 0;
@@ -205,6 +240,7 @@ namespace SensorSimulatorGui.Pages
             // WarningMax
             lblWarnMax.AutoSize = true;
             lblWarnMax.Text = "WarningMax";
+            lblWarnMax.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblWarnMax.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numWarningMax.DecimalPlaces = 3;
             numWarningMax.Minimum = 0;
@@ -216,6 +252,7 @@ namespace SensorSimulatorGui.Pages
             // IntervalMs
             lblInterval.AutoSize = true;
             lblInterval.Text = "IntervalMs";
+            lblInterval.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblInterval.Anchor = System.Windows.Forms.AnchorStyles.Left;
             numIntervalMs.Minimum = 100;
             numIntervalMs.Maximum = 600000;
@@ -227,6 +264,7 @@ namespace SensorSimulatorGui.Pages
             // Flags
             lblFlags.AutoSize = true;
             lblFlags.Text = "Flags";
+            lblFlags.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblFlags.Anchor = System.Windows.Forms.AnchorStyles.Left;
 
             flagsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -234,23 +272,63 @@ namespace SensorSimulatorGui.Pages
             flagsLayout.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
             chkEnabled.Text = "Enabled";
             chkEnabled.AutoSize = true;
+            chkEnabled.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             chkSimulate.Text = "Simulate";
             chkSimulate.AutoSize = true;
+            chkSimulate.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             flagsLayout.Controls.Add(chkEnabled);
             flagsLayout.Controls.Add(chkSimulate);
 
             // Actions
             lblActions.AutoSize = true;
             lblActions.Text = "Actions";
+            lblActions.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblActions.Anchor = System.Windows.Forms.AnchorStyles.Left;
 
             actionsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             actionsLayout.AutoSize = true;
-            actionsLayout.FlowDirection = System.Windows.Forms.FlowDirection.LeftToRight;
+            actionsLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            actionsLayout.WrapContents = false;
+            actionsLayout.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             btnAdd.Text = "Add";
+            btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.BackColor = System.Drawing.Color.FromArgb(59, 130, 246);
+            btnAdd.ForeColor = System.Drawing.Color.White;
+            btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(37, 99, 235);
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Size = new System.Drawing.Size(140, 34);
+            btnAdd.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             btnUpdate.Text = "Update";
+            btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.BackColor = System.Drawing.Color.FromArgb(30, 58, 138);
+            btnUpdate.ForeColor = System.Drawing.Color.White;
+            btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(29, 78, 216);
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Size = new System.Drawing.Size(140, 34);
+            btnUpdate.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             btnDelete.Text = "Delete";
+            btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.BackColor = System.Drawing.Color.FromArgb(124, 58, 237);
+            btnDelete.ForeColor = System.Drawing.Color.White;
+            btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(109, 40, 217);
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Size = new System.Drawing.Size(140, 34);
+            btnDelete.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             btnRefresh.Text = "Refresh";
+            btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnRefresh.FlatAppearance.BorderSize = 0;
+            btnRefresh.BackColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            btnRefresh.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
+            btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(203, 213, 225);
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Size = new System.Drawing.Size(140, 34);
+            btnRefresh.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
+
+
+
             actionsLayout.Controls.Add(btnAdd);
             actionsLayout.Controls.Add(btnUpdate);
             actionsLayout.Controls.Add(btnDelete);
@@ -259,11 +337,13 @@ namespace SensorSimulatorGui.Pages
             // Status
             lblStatusCaption.AutoSize = true;
             lblStatusCaption.Text = "Status";
+            lblStatusCaption.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
             lblStatusCaption.Anchor = System.Windows.Forms.AnchorStyles.Left;
 
             lblStatus.AutoSize = true;
             lblStatus.Text = "Ready.";
             lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblStatus.ForeColor = System.Drawing.Color.FromArgb(55, 65, 81);
 
             // Add to editorLayout
             editorLayout.Controls.Add(lblSensorId, 0, 0);

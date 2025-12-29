@@ -40,26 +40,63 @@ namespace SensorSimulatorGui
             statusStrip.SuspendLayout();
             SuspendLayout();
 
-            // panelNav
-            // Left-side navigation. Keep it narrow by default so the pages have room.
-            panelNav.Dock = System.Windows.Forms.DockStyle.Left;
-            panelNav.Width = 140;
-            panelNav.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            // Form look
+            BackColor = System.Drawing.Color.FromArgb(243, 244, 246);
+            Font = new System.Drawing.Font("Segoe UI", 10F);
 
+            // panelNav
+            panelNav.Dock = System.Windows.Forms.DockStyle.Left;
+            panelNav.Width = 160;
+            panelNav.Padding = new System.Windows.Forms.Padding(10, 14, 10, 10);
+            panelNav.BackColor = System.Drawing.Color.FromArgb(17, 24, 39); // dark blue
+
+            // btnNavSensors
             btnNavSensors.Text = "Sensors";
             btnNavSensors.Dock = System.Windows.Forms.DockStyle.Top;
-            btnNavSensors.Height = 32;
+            btnNavSensors.Height = 44;
             btnNavSensors.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnNavSensors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnNavSensors.FlatAppearance.BorderSize = 0;
+            btnNavSensors.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+            btnNavSensors.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
+            btnNavSensors.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+btnNavSensors.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+btnNavSensors.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
+            btnNavSensors.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            btnNavSensors.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            btnNavSensors.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
 
+            // btnNavLive
             btnNavLive.Text = "Live data";
             btnNavLive.Dock = System.Windows.Forms.DockStyle.Top;
-            btnNavLive.Height = 32;
+            btnNavLive.Height = 44;
             btnNavLive.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnNavLive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnNavLive.FlatAppearance.BorderSize = 0;
+            btnNavLive.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+            btnNavLive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
+            btnNavLive.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+btnNavLive.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+btnNavLive.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
+            btnNavLive.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            btnNavLive.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            btnNavLive.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
 
-            btnNavArchived.Text = "Archived data";
+            // btnNavArchived
+            btnNavArchived.Text = "Archived";
             btnNavArchived.Dock = System.Windows.Forms.DockStyle.Top;
-            btnNavArchived.Height = 32;
+            btnNavArchived.Height = 44;
             btnNavArchived.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnNavArchived.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnNavArchived.FlatAppearance.BorderSize = 0;
+            btnNavArchived.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+            btnNavArchived.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
+            btnNavArchived.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+btnNavArchived.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(30, 41, 59);
+btnNavArchived.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(91, 33, 182);
+            btnNavArchived.ForeColor = System.Drawing.Color.FromArgb(226, 232, 240);
+            btnNavArchived.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            btnNavArchived.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
 
             panelNav.Controls.Add(btnNavArchived);
             panelNav.Controls.Add(btnNavLive);
@@ -67,10 +104,13 @@ namespace SensorSimulatorGui
 
             // panelContent
             panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelContent.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            panelContent.Padding = new System.Windows.Forms.Padding(14, 14, 14, 10);
 
             // statusStrip
             statusStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
+            statusStrip.BackColor = System.Drawing.Color.White;
+            statusStrip.SizingGrip = false; statusStrip.SizingGrip = false;
+            statusStrip.SizingGrip = false;
             statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[]
             {
                 lblEndpoints
@@ -81,13 +121,11 @@ namespace SensorSimulatorGui
 
             // Form1
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            // More compact default size (still fully resizable).
-            ClientSize = new System.Drawing.Size(880, 540);
-            // Dock order matters: add Fill first, then Left, then Bottom.
+            ClientSize = new System.Drawing.Size(920, 560);
             Controls.Add(panelContent);
             Controls.Add(panelNav);
             Controls.Add(statusStrip);
-            MinimumSize = new System.Drawing.Size(780, 500);
+            MinimumSize = new System.Drawing.Size(820, 520);
             Name = "Form1";
             Text = "Reactor Monitor – GUI";
 

@@ -1,6 +1,7 @@
 using SensorSimulatorGui.Api;
 using SensorSimulatorGui.Config;
 using SensorSimulatorGui.Pages;
+using System.Drawing;
 
 namespace SensorSimulatorGui;
 
@@ -15,6 +16,14 @@ public partial class Form1 : Form
 
     private readonly ReactorMonitorSettings _settings;
 
+    // Nav highlight (kept in code so the designer stays clean).
+    private readonly Color _navIdle = Color.FromArgb(17, 24, 39);
+    private readonly Color _navHover = Color.FromArgb(30, 41, 59);
+    private readonly Color _navActive = Color.FromArgb(91, 33, 182); // purple accent
+    private readonly Color _navText = Color.FromArgb(226, 232, 240);
+    private readonly Color _navTextActive = Color.White;
+
+    // Prevent re-entrancy: FormClosing can fire multiple times (e.g., we call Close() again after async shutdown).
     private bool _isClosing;
 
     public Form1(ReactorMonitorSettings settings)
@@ -48,16 +57,26 @@ public partial class Form1 : Form
         panelContent.Controls.Add(_archivedPage);
 
         ShowPage(_sensorsPage);
+        SetActiveNav(btnNavSensors);
 
         btnNavSensors.Click += async (_, _) =>
         {
             ShowPage(_sensorsPage);
+            SetActiveNav(btnNavSensors);
             await _sensorsPage.RefreshAsync();
         };
 
-        btnNavLive.Click += (_, _) => ShowPage(_livePage);
+        btnNavLive.Click += (_, _) =>
+        {
+            ShowPage(_livePage);
+            SetActiveNav(btnNavLive);
+        };
 
-        btnNavArchived.Click += (_, _) => ShowPage(_archivedPage);
+        btnNavArchived.Click += (_, _) =>
+        {
+            ShowPage(_archivedPage);
+            SetActiveNav(btnNavArchived);
+        };
 
         Shown += async (_, _) =>
         {
@@ -93,5 +112,22 @@ public partial class Form1 : Form
     private static void ShowPage(Control page)
     {
         page.BringToFront();
+    }
+
+    private void SetActiveNav(Button active)
+    {
+        var buttons = new[] { btnNavSensors, btnNavLive, btnNavArchived };
+
+        foreach (var b in buttons)
+        {
+            b.BackColor = _navIdle;
+            b.ForeColor = _navText;
+            b.Font = new Font(b.Font, FontStyle.Regular);
+            b.FlatAppearance.MouseOverBackColor = _navHover;
+        }
+
+        active.BackColor = _navActive;
+        active.ForeColor = _navTextActive;
+        active.Font = new Font(active.Font, FontStyle.Bold);
     }
 }
