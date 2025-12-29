@@ -72,16 +72,16 @@ public partial class LivePage : UserControl
 
             _hub.On<MeasurementOut>("measurement", m => SafeUi(() => UpsertMeasurement(m)));
 
-            lblStatus.Text = "connecting...";
+            SafeUi(() => lblStatus.Text = "connecting...");
             await _hub.StartAsync();
-            lblStatus.Text = "connected";
+            SafeUi(() => lblStatus.Text = "connected");
 
             // Keep one subscription entry in Controller so it's visible in Swagger during demos.
             _ = _api.EnsureSubscriptionAsync(Environment.MachineName, "all");
         }
         catch (Exception ex)
         {
-            lblStatus.Text = $"error: {ex.Message}";
+            SafeUi(() => lblStatus.Text = $"error: {ex.Message}");
         }
     }
 
@@ -131,11 +131,19 @@ public partial class LivePage : UserControl
     {
         if (_hub is null) return;
 
-        try { await _hub.StopAsync(); } catch { }
-        try { await _hub.DisposeAsync(); } catch { }
+        // Don't let shutdown hang the whole app on exit.
+        var hub = _hub;
         _hub = null;
 
+        try { await WithTimeout(hub.StopAsync(), 1200).ConfigureAwait(false); } catch { }
+        try { await WithTimeout(hub.DisposeAsync().AsTask(), 1200).ConfigureAwait(false); } catch { }
+
         SafeUi(() => lblStatus.Text = "disconnected");
+    }
+
+    private static async Task WithTimeout(Task task, int timeoutMs)
+    {
+        await Task.WhenAny(task, Task.Delay(timeoutMs)).ConfigureAwait(false);
     }
 
     private void SafeUi(Action action)

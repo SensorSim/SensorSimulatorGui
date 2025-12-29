@@ -15,6 +15,8 @@ public partial class Form1 : Form
 
     private readonly ReactorMonitorSettings _settings;
 
+    private bool _isClosing;
+
     public Form1(ReactorMonitorSettings settings)
     {
         InitializeComponent();
@@ -66,9 +68,26 @@ public partial class Form1 : Form
 
     protected override void OnFormClosing(FormClosingEventArgs e)
     {
-        base.OnFormClosing(e);
-        try { _livePage.DisconnectAsync().GetAwaiter().GetResult(); } catch { }
-        _http.Dispose();
+        // Don't block the UI thread here (waiting on async tasks can deadlock WinForms).
+        if (_isClosing)
+        {
+            base.OnFormClosing(e);
+            return;
+        }
+
+        _isClosing = true;
+        e.Cancel = true;
+
+        Enabled = false;
+
+        BeginInvoke(async () =>
+        {
+            try { await _livePage.DisconnectAsync(); } catch { }
+            try { _http.Dispose(); } catch { }
+
+            // Trigger the actual close now that async shutdown is done.
+            Close();
+        });
     }
 
     private static void ShowPage(Control page)
